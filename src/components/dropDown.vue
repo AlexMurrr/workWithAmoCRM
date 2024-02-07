@@ -1,23 +1,27 @@
+<script setup>
+
+import { ref, onMounted } from 'vue';
+
+    const selectedItem = ref('items[0].name');
+       
+    const items = [
+          { id: 1, name: 'Не выбрано' },
+          { id: 2, name: 'Сделка' },
+          { id: 3, name: 'Контакт' },
+          { id: 4, name: 'Компания' }
+        ];
+    onMounted(() => {
+      selectedItem.value = items[0].name;
+    });   
+     
+  </script>
+
 <template>
     <div>
       <select v-model="selectedItem">
-        <option v-for="item in items" :key="item.id" :value="item.id">{{ item.name }}</option>
-      </select>
-      <p>Выбрано: {{ selectedItem }}</p>
+        <option v-for="item in items" :key="item.id" :value="item.name">{{ item.name }}</option>
+      </select>     
     </div>
   </template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        selectedItem: null,
-        items: [
-          { id: 1, name: 'Вариант 1' },
-          { id: 2, name: 'Вариант 2' },
-          { id: 3, name: 'Вариант 3' }
-        ]
-      };
-    }
-  };
-  </script>
+  
