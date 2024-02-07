@@ -1,17 +1,15 @@
 <script setup>
-
+  import dropDown from './components/dropDown.vue';
 </script>
 
 <template>
   <header>
    
-    <div class="wrapper">
-     
-    </div>
+   
   </header>
 
   <main>
-    <TheWelcome />
+   <dropDown/>
   </main>
 </template>
 
