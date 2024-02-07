@@ -1,5 +1,5 @@
 <script setup>
-  import dropDown from './components/dropDown.vue';
+  import total from './components/totalComponets.vue';
 </script>
 
 <template>
@@ -9,7 +9,7 @@
   </header>
 
   <main>
-   <dropDown/>
+   <total/>
   </main>
 </template>
 
