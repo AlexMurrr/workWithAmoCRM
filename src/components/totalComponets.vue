@@ -11,9 +11,8 @@
 </script>
 
 <template>
-
-   <dropDown :items="items"/>
-  
+ 
+   <dropDown :items="items"/>  
 </template>
 
 <style scoped>

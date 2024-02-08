@@ -4,8 +4,10 @@ import { ref, onMounted, watch } from 'vue';
 import  buttonSelect  from './buttonV.vue';
 
     const selectedItem = ref('');   
-    let activeBtn = '';
+    const activeBtn = ref('');
     let dis = '';
+    let nameButton = ref('Создать');
+
 
     const props = defineProps({
       items: {
@@ -26,15 +28,24 @@ import  buttonSelect  from './buttonV.vue';
       selectedItem.value = items.value[0].name;
     });   
   
-watch(selectedItem, (newValue, oldValue) => { 
-    if (newValue ==='Не выбрано'){
-      activeBtn = 'noActive';
-      dis = true;
-    }else if (newValue !=='Не выбрано') {
-      activeBtn = 'active';
-      dis = false;
+    watch(selectedItem, (newValue, oldValue) => { 
+        if (newValue ==='Не выбрано'){
+          activeBtn.value = 'noActive';
+          dis = true;
+        }else if (newValue !=='Не выбрано') {
+          activeBtn.value = 'active';
+          dis = false;
+        }
+    });
+
+    function s () {
+      activeBtn.value = 'spinner-btn';
+      nameButton.value='';
+      setTimeout(()=>{
+      activeBtn.value = '';
+      nameButton.value='Cоздать';
+    }, 2000)   
     }
-});
 
 </script>
 
@@ -46,8 +57,8 @@ watch(selectedItem, (newValue, oldValue) => {
       </select>     
     </div>
     <div>
-      <buttonSelect :isActive="activeBtn" :disabled="dis"/>
+      <buttonSelect @click="s" :isActive="activeBtn" :nameButton = 'nameButton' :disabled="dis"/>
     </div>
-  </template>
+</template>
   
   

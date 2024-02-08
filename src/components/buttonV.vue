@@ -1,17 +1,23 @@
 <script setup>  
 const props = defineProps({
-  isActive: {type: String}
+  isActive: {type: String},
+  nameButton:{type: String, default: 'Создать'}
 })
+
+const emit = defineEmits(['updateName']);
+const changeName = () => {
+  const newName = 'Новое значение кнопки';
+  emit('updateName', newName); // Отправляем новое значение имени в родительский компонент через событие 'updateName'
+};
+
 </script>
 
 <template>
-    <button :class="props.isActive" >создать</button>
-
-    <button class="spinner-btn"></button>
+    <button :class="isActive" @click="changeName">{{ nameButton }}</button>    
 </template>  
   
 
-<style>
+<style scoped>
 
 .noActive {
   background-color: rgb(242, 242, 247); 
