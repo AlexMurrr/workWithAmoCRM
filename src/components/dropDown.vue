@@ -1,13 +1,14 @@
 <script setup>
 
-import { ref, onMounted, defineProps } from 'vue';
+import { ref, onMounted, watch } from 'vue';
+import  buttonSelect  from './buttonV.vue';
 
     const selectedItem = ref('');   
-
-      const props = defineProps({
-    items: {
-    type: Array,
-    default: () => [{
+    let activeBtn = 'noActive';
+    const props = defineProps({
+      items: {
+      type: Array,
+      default: () => [{
       id: 1,
       name: 'Item 1'
     }, {
@@ -17,26 +18,30 @@ import { ref, onMounted, defineProps } from 'vue';
   }
 });
 
-const items = ref(props.items);
-       
-    // const items = [
-    //       { id: 1, name: 'Не выбрано' },
-    //       { id: 2, name: 'Сделка' },
-    //       { id: 3, name: 'Контакт' },
-    //       { id: 4, name: 'Компания' }
-    //     ];
-
+  const items = ref(props.items);       
+   
     onMounted(() => {
       selectedItem.value = items.value[0].name;
     });   
-     
+  
+watch(selectedItem, (newValue, oldValue) => { 
+    if (newValue ==='Не выбрано'){
+      activeBtn = 'noActive';
+    }else if (newValue !=='Не выбрано') 
+      activeBtn = 'active'
+});
+
   </script>
 
 <template>
-    <div>
+    <div>      
+       
       <select v-model="selectedItem">
         <option v-for="item in items" :key="item.id" :value="item.name">{{ item.name }}</option>
       </select>     
+    </div>
+    <div>
+      <buttonSelect :isActive="activeBtn"/>
     </div>
   </template>
   
