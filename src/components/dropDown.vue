@@ -4,7 +4,9 @@ import { ref, onMounted, watch } from 'vue';
 import  buttonSelect  from './buttonV.vue';
 
     const selectedItem = ref('');   
-    let activeBtn = 'noActive';
+    let activeBtn = '';
+    let dis = '';
+
     const props = defineProps({
       items: {
       type: Array,
@@ -27,11 +29,14 @@ import  buttonSelect  from './buttonV.vue';
 watch(selectedItem, (newValue, oldValue) => { 
     if (newValue ==='Не выбрано'){
       activeBtn = 'noActive';
-    }else if (newValue !=='Не выбрано') 
-      activeBtn = 'active'
+      dis = true;
+    }else if (newValue !=='Не выбрано') {
+      activeBtn = 'active';
+      dis = false;
+    }
 });
 
-  </script>
+</script>
 
 <template>
     <div>      
@@ -41,7 +46,7 @@ watch(selectedItem, (newValue, oldValue) => {
       </select>     
     </div>
     <div>
-      <buttonSelect :isActive="activeBtn"/>
+      <buttonSelect :isActive="activeBtn" :disabled="dis"/>
     </div>
   </template>
   

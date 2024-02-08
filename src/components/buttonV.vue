@@ -5,14 +5,14 @@ const props = defineProps({
 </script>
 
 <template>
-    <button :class="props.isActive" >создать</button>
+    <button :class="props.isActive" :disabled="true">создать</button>
 </template>  
   
 
 <style>
 
 .noActive {
-    background-color: rgb(242, 242, 247); 
+  background-color: rgb(242, 242, 247); 
 }
 
 .active {
