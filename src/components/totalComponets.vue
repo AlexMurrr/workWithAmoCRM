@@ -1,5 +1,6 @@
 <script setup>
   import dropDown from './dropDown.vue';
+  
 
   const items = [
           { id: 1, name: 'Не выбрано' },
@@ -10,7 +11,7 @@
 </script>
 
 <template>
- 
+
    <dropDown :items="items"/>
   
 </template>
