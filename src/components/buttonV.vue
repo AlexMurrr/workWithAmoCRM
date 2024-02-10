@@ -1,7 +1,7 @@
 <script setup>  
 const props = defineProps({
   isActive: {type: String},
-  nameButton:{type: String, default: 'Создать'}
+  nameButton:{type: String}
 })
 
 const emit = defineEmits(['updateName']);
@@ -24,7 +24,7 @@ const changeName = () => {
 }
 
 .active {
-  background-color: blue;
+  background-color: rgb(9, 9, 146);
   color: white;
 }
 

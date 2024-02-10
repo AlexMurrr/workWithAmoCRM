@@ -42,7 +42,7 @@ import  buttonSelect  from './buttonV.vue';
       activeBtn.value = 'spinner-btn';
       nameButton.value='';
       setTimeout(()=>{
-      activeBtn.value = '';
+      activeBtn.value = 'active';
       nameButton.value='Cоздать';
     }, 2000)   
     }

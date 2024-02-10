@@ -3,14 +3,9 @@
 </script>
 
 <template>
-  <header>
-   
-   
-  </header>
-
-  <main>
-   <total/>
-  </main>
+ <div>
+  <total/>
+</div>
 </template>
 
 <style scoped>

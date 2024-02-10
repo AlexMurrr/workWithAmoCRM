@@ -21,7 +21,9 @@
     width: 300px;
     height: 200px;
     overflow: auto;
-    background-color: rgb(242, 243, 245);
+    background-color: rgb(19, 47, 99);
+    border-radius: 5%;
+    color: #fff;
 }
 
 </style>
