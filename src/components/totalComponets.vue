@@ -1,5 +1,6 @@
 <script setup>
   import dropDown from './dropDown.vue';
+  import contanerV from './contanerV.vue';
   
 
   const items = [
@@ -10,9 +11,9 @@
         ];
 </script>
 
-<template>
- 
+<template> 
    <dropDown :items="items"/>  
+   <contanerV/>
 </template>
 
 <style scoped>
