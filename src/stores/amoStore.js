@@ -1,0 +1,22 @@
+import { defineStore } from 'pinia';
+
+
+const access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI4MDc2ZWQyNGI1NWU5OTUxYTRiMTNhY2QyOWEwNjI0YjczZjM1ZGFjNGM2ZDI4ODk5YjE1YjQ4MmRiMGZhNjMyZGFjYmVjY2M4MjZkMzI4In0.eyJhdWQiOiI2ZmU0Zjg3OS05MTMwLTQ1NDUtYjk2MS1jOWUzYWE5NjEyNmQiLCJqdGkiOiJiODA3NmVkMjRiNTVlOTk1MWE0YjEzYWNkMjlhMDYyNGI3M2YzNWRhYzRjNmQyODg5OWIxNWI0ODJkYjBmYTYzMmRhY2JlY2NjODI2ZDMyOCIsImlhdCI6MTcwNzY0MDk1NCwibmJmIjoxNzA3NjQwOTU0LCJleHAiOjE3MDc3MjczNTMsInN1YiI6IjEwNjUzMzc0IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxNTU4NTE4LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiZmJjMWZlN2MtY2I1NC00NzM5LWI0ZjEtOWZiMzFjNzZlNGY1In0.hLyv85yqlbqgfZdxLyieTgbqGBz9YW5uzCJNRIQS3P93gKu-noVUg7r-px_SCFjTf_dEXx1_FYDQSfn88UKKwye4weImfUwTlRPF6E7MmBmBrE9wiFIkyHqTwWGcIHBiHINR6Fz8yCvAjXMCStCjX28l1M9vA7ZiiY2sM-x_VyxVbPO5NZ2lbpcfQTBbDVyrnKj1jWOkZ3jE5HmTvIFUef-MV93XxavSDfyqv33NYS4gZK-iYzGV_X-8ufUVobNjIeNJgLhwDHyag4yoHaxBFBr0nmFaAwkghxBZqC641LehIpsHTBfCUl57IdeLHkhEnPQRP3ciRr4NXEXA13AU9w';
+
+export const useAmoStore = defineStore('amoStore', () => {
+  state: ()=>{
+    return { 
+
+    }
+  }
+
+  actions: {
+
+  }
+})
+
+//добавляем сделку
+// https://plastoponica.amocrm.ru/api/v4/leads
+// Content-Type:application/json
+// body [ {     
+// }]

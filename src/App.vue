@@ -3,11 +3,11 @@
 </script>
 
 <template>
- <div>
+ <div class="app">
   <total/>
 </div>
 </template>
 
-<style scoped>
+<style>
 
 </style>

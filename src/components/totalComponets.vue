@@ -19,16 +19,24 @@
   <div  class="total">
    <titleV :title="title"/>
    <dropDown :items="items"/>  
-   <contanerV/>
+   <div class="contaner">
+    <contanerV/>
+   </div>
   </div>
 </template>
 
 <style scoped>
   .total{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
     background: linear-gradient(to bottom, #00d2ff, #928dab);    
     height: 570px;
     width: 600px;
+    border-radius: 15px;
   }
-
+ 
  
 </style>
