@@ -36,7 +36,6 @@
     height: 570px;
     width: 600px;
     border-radius: 15px;
-  }
- 
+  } 
  
 </style>
