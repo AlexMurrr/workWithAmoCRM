@@ -4,16 +4,18 @@ import { defineStore } from "pinia";
 export const amoStore = defineStore("amo", {
   state: () => {
     return {
-      eee: 'eeee'
+      entity:'',
+      nameEntity: '',      
     };
   },
 
   getters: {},
 
   actions: {
-   eeee(){
-    console.log(this.eee);
-   }
+    getEntity(data){
+      this.entity=data;
+      console.log(this.entity);
+    }
   },
 });
 

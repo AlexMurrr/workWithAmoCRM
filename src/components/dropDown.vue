@@ -2,6 +2,9 @@
 
 import { ref, onMounted, watch } from 'vue';
 import  buttonSelect  from './buttonV.vue';
+import { amoStore } from '../stores/amoStore';
+
+const store = amoStore();
 
     const selectedItem = ref('');   
     const activeBtn = ref('');
@@ -47,12 +50,15 @@ import  buttonSelect  from './buttonV.vue';
     }, 2000)   
     }
 
+    // function ss(){
+    //   console.log(selectedItem.value);
+    // }
+
 </script>
 
 <template>
-    <div>      
-       
-      <select v-model="selectedItem">
+    <div>          
+      <select v-model="selectedItem" @click="store. getEntity(selectedItem)">
         <option v-for="item in items" :key="item.id" :value="item.name">{{ item.name }}</option>
       </select>     
     </div>

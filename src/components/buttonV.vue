@@ -51,7 +51,7 @@ const changeName = () => {
 
 <template>
     <button :class="isActive" @click="changeName">{{ nameButton }}</button> 
-    <button  @click="getData"> nameButton </button>    
+    <!-- <button  @click="getData"> nameButton </button>     -->
 </template>   
 
 <style scoped>
