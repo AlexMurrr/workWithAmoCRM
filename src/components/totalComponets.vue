@@ -2,6 +2,7 @@
   import dropDown from './dropDown.vue';
   import contanerV from './contanerV.vue';
   import titleV from './titleV.vue';
+  import modal from './modalV.vue';
   
 
   const items = [
@@ -21,6 +22,7 @@
    <dropDown :items="items"/>  
    <div class="contaner">
     <contanerV/>
+    <modal/>
    </div>
   </div>
 </template>
