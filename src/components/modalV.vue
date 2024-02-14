@@ -68,7 +68,7 @@
       <button @click="openModal">Открыть модальное окно</button>
       
       <div v-if="isModalOpen" class="modal">
-        <input v-model="inputValue" placeholder="Введите текст">
+        <input v-model="inputValue" placeholder="Введите имя сущности">
         <button @click="sendData">Отправить</button>
       </div>
     </div>

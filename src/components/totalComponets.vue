@@ -36,7 +36,7 @@
     gap: 30px;
     background: linear-gradient(to bottom, #00d2ff, #928dab);    
     height: 570px;
-    width: 600px;
+    width: 900px;
     border-radius: 15px;
   } 
  
