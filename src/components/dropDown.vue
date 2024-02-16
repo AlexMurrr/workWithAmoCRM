@@ -49,16 +49,13 @@ const store = amoStore();
       nameButton.value='Cоздать';
     }, 2000)   
     }
-
-    // function ss(){
-    //   console.log(selectedItem.value);
-    // }
+   
 
 </script>
 
 <template>
     <div>          
-      <select v-model="selectedItem" @click="store. getEntity(selectedItem)">
+      <select v-model="selectedItem" @click="store.getEntity(selectedItem)">
         <option v-for="item in items" :key="item.id" :value="item.name">{{ item.name }}</option>
       </select>     
     </div>

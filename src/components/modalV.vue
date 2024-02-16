@@ -1,38 +1,25 @@
-<!-- <template>
+<template>
     <button @click="openModal">Открыть модальное окно</button>
     <teleport to="body">
       <div v-if="showModal" class="modal">
-        <div class="modal-content">
-          <span class="close" @click="closeModal">&times;</span>
-          <button @click="sendMessage">Send</button>
-          <p>Это модальное окно</p>
+        <div class="modal-content">      
+          <input v-model="inputValue" placeholder="Введите имя сущности">    
+          <button @click="sendMessage">Send</button>  
+          <button @click="closeModal">Close</button>         
         </div>
       </div>
     </teleport>
   </template>
   
-  <script>
-  import { ref } from 'vue';
-  
-  export default {
-    setup() {
-      const showModal = ref(false);
-  
-      const openModal = () => {
-        showModal.value = true;
-      }
-  
-      const closeModal = () => {
-        showModal.value = false;
-      }
-  
-      return {
-        showModal,
-        openModal,
-        closeModal
-      }
-    }
-  }
+  <script setup> 
+  import { storeToRefs } from 'pinia';
+  import { modalStore } from '../stores/modalStore';
+
+  const storeModal = modalStore();   
+      
+  const { showModal, inputValue } = storeToRefs(storeModal);
+  const {openModal, closeModal, sendMessage} = storeModal;   
+   
   </script>
   
   <style>
@@ -49,7 +36,7 @@
   }
   
   .modal-content {
-    background-color: white;
+    background-color: rgb(158, 228, 240);
     padding: 20px;
     border-radius: 5px;
   }
@@ -63,7 +50,7 @@
   </style> -->
 
 
-  <template>
+   <!-- <template>
     <div>
       <button @click="openModal">Открыть модальное окно</button>
       
@@ -74,27 +61,13 @@
     </div>
   </template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        isModalOpen: false,
-        inputValue: ''
-      };
-    },
-    methods: {
-      openModal() {
-        this.isModalOpen = true;
-      },
-      sendData() {
-        // Ваша логика отправки данных
-        console.log('Отправленное значение:', this.inputValue);
-        
-        // Закрываем модальное окно после отправки данных
-        this.isModalOpen = false;
-      }
-    }
-  };
+<script setup>
+
+import {modalStore} from '../stores/modalStore'
+    
+    const store = modalStore();
+    const { isModalOpen } = store;
+  
   </script>
   
   <style>
@@ -107,4 +80,4 @@
     padding: 20px;
     border: 1px solid #ccc;
   }
-  </style>
+  </style> -->
