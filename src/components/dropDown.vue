@@ -2,30 +2,16 @@
 
 import { ref, onMounted, watch } from 'vue';
 import  buttonSelect  from './buttonV.vue';
-import { amoStore } from '../stores/amoStore';
+import { modalStore } from '../stores/modalStore';
+import { storeToRefs } from 'pinia';
 
-const store = amoStore();
-
-    const selectedItem = ref('');   
+const storeModal = modalStore();
+      
     const activeBtn = ref('');
     let dis = '';
     let nameButton = ref('Создать');
 
-
-    const props = defineProps({
-      items: {
-      type: Array,
-      default: () => [{
-      id: 1,
-      name: 'Item 1'
-    }, {
-      id: 2,
-      name: 'Item 2'
-    }]
-  }
-});
-
-  const items = ref(props.items);       
+    const { items, selectedItem } = storeToRefs(storeModal); //    
    
     onMounted(() => {
       selectedItem.value = items.value[0].name;
@@ -55,7 +41,7 @@ const store = amoStore();
 
 <template>
     <div>          
-      <select v-model="selectedItem" @click="store.getEntity(selectedItem)">
+      <select v-model="selectedItem" @change="storeModal.getEntity(selectedItem)" >
         <option v-for="item in items" :key="item.id" :value="item.name">{{ item.name }}</option>
       </select>     
     </div>

@@ -2,15 +2,9 @@
   import dropDown from './dropDown.vue';
   import contanerV from './contanerV.vue';
   import titleV from './titleV.vue';
-  import modal from './modalV.vue';
-  
+  import modal from './modalV.vue';  
 
-  const items = [
-          { id: 1, name: 'Не выбрано' },
-          { id: 2, name: 'Сделка' },
-          { id: 3, name: 'Контакт' },
-          { id: 4, name: 'Компания' }
-        ];
+  
 
   const title = 'Давайте создадим сущность';
 
@@ -19,7 +13,7 @@
 <template> 
   <div  class="total">
    <titleV :title="title"/>
-   <dropDown :items="items"/>  
+   <dropDown />  
    <div class="contaner">
     <contanerV/>
     <modal/>

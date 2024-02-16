@@ -4,7 +4,7 @@
       <div v-if="showModal" class="modal">
         <div class="modal-content">      
           <input v-model="inputValue" placeholder="Введите имя сущности">    
-          <button @click="sendMessage">Send</button>  
+          <button @click="getEntity">Send</button>  
           <button @click="closeModal">Close</button>         
         </div>
       </div>
@@ -18,7 +18,7 @@
   const storeModal = modalStore();   
       
   const { showModal, inputValue } = storeToRefs(storeModal);
-  const {openModal, closeModal, sendMessage} = storeModal;   
+  const {openModal, closeModal, sendMessage, getEntity} = storeModal;   
    
   </script>
   

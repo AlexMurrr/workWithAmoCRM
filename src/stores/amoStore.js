@@ -13,7 +13,10 @@ export const amoStore = defineStore("amo", {
 
   actions: {
     getEntity(data){
-      this.entity=data;
+      
+      if (data != 'Не выбрано') this.entity=data;
+      else this.entity='';
+
       console.log(this.entity);
     }
   },
