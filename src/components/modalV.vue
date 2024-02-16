@@ -2,7 +2,8 @@
     <button @click="openModal">Открыть модальное окно</button>
     <teleport to="body">
       <div v-if="showModal" class="modal">
-        <div class="modal-content">      
+        <div class="modal-content">    
+          <h3>dfdfdgf</h3>  
           <input v-model="inputValue" placeholder="Введите имя сущности">    
           <button @click="getEntity">Send</button>  
           <button @click="closeModal">Close</button>         

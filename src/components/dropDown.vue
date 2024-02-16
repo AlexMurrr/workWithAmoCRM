@@ -41,7 +41,7 @@ const storeModal = modalStore();
 
 <template>
     <div>          
-      <select v-model="selectedItem" @change="storeModal.getEntity(selectedItem)" >
+      <select v-model="selectedItem">
         <option v-for="item in items" :key="item.id" :value="item.name">{{ item.name }}</option>
       </select>     
     </div>
