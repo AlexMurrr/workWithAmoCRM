@@ -3,7 +3,7 @@ import { storeToRefs } from "pinia";
 import { modalStore } from '../stores/modalStore'; 
 
 const storeModal = modalStore();
-const { openModal } = storeModal;
+const { openModal,  sendConsol} = storeModal;
 
 const props = defineProps({
   isActive: {type: String},
@@ -21,6 +21,7 @@ const changeName = () => {
 <template>
     <button :class="isActive" @click="openModal">{{ nameButton }}</button>     
 </template>   
+
 
 <style scoped>
 

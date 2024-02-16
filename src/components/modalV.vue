@@ -1,11 +1,10 @@
-<template>
-    <button @click="openModal">Открыть модальное окно</button>
+<template>   
     <teleport to="body">
       <div v-if="showModal" class="modal">
         <div class="modal-content">    
-          <h3>dfdfdgf</h3>  
+          <h3>Введите имя для '{{ selectedItem }}'</h3>  
           <input v-model="inputValue" placeholder="Введите имя сущности">    
-          <button @click="getEntity">Send</button>  
+          <button @click="getEntity(); sendMessage()">Send</button>  
           <button @click="closeModal">Close</button>         
         </div>
       </div>
@@ -18,7 +17,7 @@
 
   const storeModal = modalStore();   
       
-  const { showModal, inputValue } = storeToRefs(storeModal);
+  const { showModal, inputValue,  selectedItem} = storeToRefs(storeModal);
   const {openModal, closeModal, sendMessage, getEntity} = storeModal;   
    
   </script>

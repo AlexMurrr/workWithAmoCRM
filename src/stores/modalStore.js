@@ -24,14 +24,16 @@ export const modalStore = defineStore("modal", () => {
       selectedItem.value='Не выбрано';
       }  
     const sendMessage = () => {
-        console.log(inputValue.value);
+        console.log(selectedItem.value + ':' + inputValue.value);
         showModal.value = false;
+        selectedItem.value='Не выбрано';
     }  
 
     const getEntity = (data) => {      
        entity.value = data;    
         if (entity.value != 'Не выбрано') openModal()
       }
+     
   
     return {
         items,
@@ -42,5 +44,6 @@ export const modalStore = defineStore("modal", () => {
         closeModal,
         sendMessage,
         getEntity,
+        sendMessage,
     }
 });
