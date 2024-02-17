@@ -30,7 +30,7 @@ const changeName = () => {
 }
 
 .active {
-  background-color: rgb(9, 9, 146);
+  background-color: rgb(69, 69, 243);
   color: white;
 }
 
@@ -41,6 +41,7 @@ const changeName = () => {
   border: none;
   position: relative;
   overflow: hidden;
+  font-size: 20px;
  
 }
 
