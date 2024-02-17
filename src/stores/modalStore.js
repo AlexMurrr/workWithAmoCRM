@@ -27,6 +27,7 @@ export const modalStore = defineStore("modal", () => {
         console.log(selectedItem.value + ':' + inputValue.value);
         showModal.value = false;
         selectedItem.value='Не выбрано';
+        inputValue.value='';
     }  
 
     const getEntity = (data) => {      
