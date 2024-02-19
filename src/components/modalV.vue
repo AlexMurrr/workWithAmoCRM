@@ -3,8 +3,8 @@
       <div v-if="showModal" class="modal">
         <div class="modal-content">    
           <h3>Введите имя для '{{ selectedItem }}'</h3>  
-          <input v-model="inputValue" placeholder="Введите имя сущности">    
-          <button @click="getEntity(); addEntity(selectedItem, inputValue)">Send</button>  
+          <input  type="text" v-model="inputValue" placeholder="Введите имя сущности" required>    
+          <button @click="getEntity(); addEntity(selectedItem, inputValue); reset()">Send</button>  
           <button @click="closeModal">Close</button>         
         </div>
       </div>
@@ -21,8 +21,13 @@
   const amoStore = useAmoStore(); 
       
   const { showModal, inputValue,  selectedItem} = storeToRefs(storeModal);
-  const { closeModal, sendMessage, getEntity} = storeModal;   
+  const { closeModal, getEntity} = storeModal;   
   const { addEntity } = amoStore;
+
+  function reset (){
+    showModal.value = false;   
+    inputValue.value='';
+  }
    
   </script>
   
