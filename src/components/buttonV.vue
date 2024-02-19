@@ -3,7 +3,7 @@ import { storeToRefs } from "pinia";
 import { modalStore } from '../stores/modalStore'; 
 
 const storeModal = modalStore();
-const { openModal,  sendConsol} = storeModal;
+const { openModal } = storeModal;
 
 const props = defineProps({
   isActive: {type: String},

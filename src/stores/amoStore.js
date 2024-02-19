@@ -1,6 +1,8 @@
 
 import { defineStore } from "pinia";
 
+//try Option api Pinia
+
 export const useAmoStore = defineStore("amo", {
   state: () => {
     return {
@@ -27,6 +29,11 @@ export const useAmoStore = defineStore("amo", {
       return [];
    }
   },
+    addEntity(selectItem, addItem){
+      if (selectItem==='Сделка') this.deals.push(addItem);
+      else if (selectItem==='Контакт') this.contacts.push(addItem)
+      else if (selectItem==='Компания') this.company.push(addItem)
+    }
  }
 });
 

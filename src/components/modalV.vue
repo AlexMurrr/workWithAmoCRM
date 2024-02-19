@@ -4,7 +4,7 @@
         <div class="modal-content">    
           <h3>Введите имя для '{{ selectedItem }}'</h3>  
           <input v-model="inputValue" placeholder="Введите имя сущности">    
-          <button @click="getEntity(); sendMessage()">Send</button>  
+          <button @click="getEntity(); addEntity(selectedItem, inputValue)">Send</button>  
           <button @click="closeModal">Close</button>         
         </div>
       </div>
@@ -14,11 +14,15 @@
   <script setup> 
   import { storeToRefs } from 'pinia';
   import { modalStore } from '../stores/modalStore';
+  import { useAmoStore }  from '../stores/amoStore';
 
-  const storeModal = modalStore();   
+
+  const storeModal = modalStore();  
+  const amoStore = useAmoStore(); 
       
   const { showModal, inputValue,  selectedItem} = storeToRefs(storeModal);
-  const {openModal, closeModal, sendMessage, getEntity} = storeModal;   
+  const { closeModal, sendMessage, getEntity} = storeModal;   
+  const { addEntity } = amoStore;
    
   </script>
   
