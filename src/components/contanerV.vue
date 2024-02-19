@@ -1,15 +1,31 @@
 <script setup>  
+import { useAmoStore }  from '../stores/amoStore';
+import { modalStore } from '../stores/modalStore';
+import { storeToRefs } from 'pinia';
+import { watch, watchEffect } from 'vue';
 
+const storeModal = modalStore();
+const { selectedItem } = storeToRefs(storeModal); 
+
+const amoStore = useAmoStore();
+const { deals } = storeToRefs(amoStore);
+const { listEntity } = amoStore;
+
+function check(){
+  console.log(selectedItem.value);
+}
+
+ watchEffect(selectedItem, listEntity(selectedItem));
 </script>
 
-<template>   
-   
+<template>  
+  
    <div class="resultContaner">
+
+    <!-- <button @click="check">check</button> -->
+
   <ul>
-    <li>Результат 1</li>
-    <li>Результат 2</li>
-    <li>Результат 3</li>
-    <!-- и так далее -->
+    <li v-for="item in listEntity(selectedItem)">{{ item }}</li>  
   </ul>
 </div>
 

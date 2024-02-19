@@ -1,19 +1,33 @@
 
 import { defineStore } from "pinia";
 
-export const amoStore = defineStore("amo", {
+export const useAmoStore = defineStore("amo", {
   state: () => {
     return {
-      entity:'',
-      nameEntity: '',      
+      deals:['deal1', 'deal2'],
+      company: ['company1', 'company2'],
+      contacts: ['contact1', 'contact2'],      
     };
   },
 
   getters: {},
 
   actions: {
-   
+   listEntity(entity){
+    switch(entity) {
+      case 'Сделка':
+      return this.deals;
+      case 'Контакт':
+      return this.contacts;
+      case 'Компания':
+      return this.company;
+      case 'Не выбрано':
+      return ['Выберите сущьность выше и появится их список'];
+      default:
+      return [];
+   }
   },
+ }
 });
 
 

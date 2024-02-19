@@ -8,10 +8,10 @@ import { storeToRefs } from 'pinia';
 const storeModal = modalStore();
       
     const activeBtn = ref('');
-    let dis = '';
+    let dis =  ref('');
     let nameButton = ref('Создать');
 
-    const { items, selectedItem } = storeToRefs(storeModal); //    
+    const { items, selectedItem } = storeToRefs(storeModal); 
    
     onMounted(() => {
       selectedItem.value = items.value[0].name;
@@ -20,10 +20,10 @@ const storeModal = modalStore();
     watch(selectedItem, (newValue, oldValue) => { 
         if (newValue ==='Не выбрано'){
           activeBtn.value = 'noActive';
-          dis = true;
+          dis.value = true;
         }else if (newValue !=='Не выбрано') {
           activeBtn.value = 'active';
-          dis = false;
+          dis.value = false;
         }
     });
 
@@ -35,8 +35,6 @@ const storeModal = modalStore();
       nameButton.value='Cоздать';
     }, 2000)   
     }
-   
-
 </script>
 
 <template>
